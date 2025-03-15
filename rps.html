@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Get human prediction
+        // Must be either rock paper or sissors
+        // log as a number
+        function getHumanPrediction() {
+            // Get input and make sure its whats expected
+            user_input = prompt("What is your choice?");
+            if (user_input == "rock") {
+                return 0;
+            } else if (user_input == "paper") {
+                return 1;
+            } else if (user_input == "sissors") {
+                return 2;
+            } else {
+                console.log("Error, please input the following 'rock' 'paper' 'sissors'");
+                getHumanPrediction();
+            }
+        }
+
+        // Get random number using Math.random() and get the computer prediction
+        function getComputerPrediction() {
+            return Math.floor(Math.random() * 3);
+        }
+
+        // Compare the two, 1 = rock / 2 = paper / 3 = sissors
+    </script>
+</body>
+</html>
