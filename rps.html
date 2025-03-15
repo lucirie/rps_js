@@ -16,9 +16,9 @@
             if (user_input == "rock") {
                 return 0;
             } else if (user_input == "paper") {
-                return 1;
-            } else if (user_input == "sissors") {
                 return 2;
+            } else if (user_input == "sissors") {
+                return 1;
             } else {
                 console.log("Error, please input the following 'rock' 'paper' 'sissors'");
                 getHumanPrediction();
@@ -27,10 +27,25 @@
 
         // Get random number using Math.random() and get the computer prediction
         function getComputerPrediction() {
-            return Math.floor(Math.random() * 3);
+            let guess = Math.floor(Math.random() * 3);
+            return guess;
         }
 
-        // Compare the two, 1 = rock / 2 = paper / 3 = sissors
+        // Compare the two, 0 = rock / 1 = sissors / 2 = paper
+        human = getHumanPrediction();
+        computer = getComputerPrediction();
+        console.log(computer);
+        if (human == 0 && computer == 2) {
+            console.log("You lose. You picked rock / Computer picked paper")
+        } else if (human == 2 && computer == 0) {
+            console.log("You win!! You picked paper / Computer picked rock")
+        } else if(human < computer) {
+            console.log("You Win!!")
+        } else if(computer > human) {
+            console.log("You lose.")
+        } else {
+            console.log("Tie!!")
+        }
     </script>
 </body>
 </html>
