@@ -3,49 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link name="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <script>
-        // Get human prediction
-        // Must be either rock paper or sissors
-        // log as a number
-        function getHumanPrediction() {
-            // Get input and make sure its whats expected
-            user_input = prompt("What is your choice?");
-            if (user_input == "rock") {
-                return 0;
-            } else if (user_input == "paper") {
-                return 2;
-            } else if (user_input == "sissors") {
-                return 1;
-            } else {
-                console.log("Error, please input the following 'rock' 'paper' 'sissors'");
-                getHumanPrediction();
-            }
-        }
-
-        // Get random number using Math.random() and get the computer prediction
-        function getComputerPrediction() {
-            let guess = Math.floor(Math.random() * 3);
-            return guess;
-        }
-
-        // Compare the two, 0 = rock / 1 = sissors / 2 = paper
-        human = getHumanPrediction();
-        computer = getComputerPrediction();
-        console.log(computer);
-        if (human == 0 && computer == 2) {
-            console.log("You lose. You picked rock / Computer picked paper")
-        } else if (human == 2 && computer == 0) {
-            console.log("You win!! You picked paper / Computer picked rock")
-        } else if(human < computer) {
-            console.log("You Win!!")
-        } else if(computer > human) {
-            console.log("You lose.")
-        } else {
-            console.log("Tie!!")
-        }
-    </script>
+    
 </body>
 </html>
