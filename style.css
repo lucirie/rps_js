@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 5% 20% 5% 20%;
+}
+
+.score {
+    display: flex;
+}
+
+.score-child {
+    flex: 1;
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+    gap: 3rem;
+}
+
+.btn {
+    flex: 1;
+    min-height: 4rem;
+}
+
+.results {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.player, .computer, .winner {
+    flex: auto;
+    padding: 1rem;
+}
