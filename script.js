@@ -16,6 +16,8 @@ let computerScoreCount = 0;
 const playerPick = document.querySelector(".player");
 const computerPick = document.querySelector(".computer");
 
+const winner = document.querySelector(".winner");
+
 btnRock.addEventListener("click", () => {
     playerPick.innerText = "Your Pick: Rock"
     let computer = computerPrediction();
@@ -30,6 +32,7 @@ btnRock.addEventListener("click", () => {
     } else {
         computerPick.innerText = "Computer's Pick: Rock";
     }
+    checkWinner();
 });
 
 
@@ -47,6 +50,7 @@ btnPaper.addEventListener("click", () => {
     } else {
         computerPick.innerText = "Computer's Pick: Paper";
     }
+    checkWinner();
 });
 
 
@@ -64,7 +68,24 @@ btnScissors.addEventListener("click", () => {
     } else {
         computerPick.innerText = "Computer's Pick: Scissors";
     }
+    checkWinner();
 });
 
 
 // if score = 5, announce winner
+
+function checkWinner() {
+    if (computerScoreCount === 5) {
+        winner.textContent = "Computer Wins!!"
+        computerScoreCount = 0;
+        humanScoreCount = 0;
+        humanScore.innerText = humanScoreCount;
+        computerScore.innerText = computerScoreCount;
+    } else if (humanScoreCount === 5) {
+        winner.textContent = "You Win!!"
+        computerScoreCount = 0;
+        humanScoreCount = 0;
+        humanScore.innerText = humanScoreCount;
+        computerScore.innerText = computerScoreCount;
+    }
+}
